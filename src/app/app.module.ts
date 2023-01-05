@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {LoginModule} from "./login/login.module";
 import { NavbarComponent } from './navbar/navbar.component';
-
+import {ProductModule} from "./product/product.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -20,7 +21,9 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    ProductModule,
+    HttpClientModule
   ],
   providers: [],
   exports: [
