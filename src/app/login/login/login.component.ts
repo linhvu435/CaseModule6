@@ -17,11 +17,11 @@ loginForm = new FormGroup({
 })
   login(){
   this.loginService.login(this.loginForm.value).subscribe((data)=>{
-
-    console.log(JSON.parse(JSON.stringify(data)))
-      this.loginService.setToken(data.accessToken);
+      this.loginService.setToken(data.token);
       this.loginService.setUsername(data.username);
-      this.loginService.setUsername(JSON.stringify(data.roles))
+      this.loginService.setImg(data.img);
+      this.loginService.setEmail(data.email);
+      this.loginService.setRole(JSON.stringify(data.roles[0].id))
       alert("đăng nhập thành công")
       this.router.navigate(["/"]);
     })

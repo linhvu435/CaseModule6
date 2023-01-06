@@ -25,10 +25,22 @@ export class LoginService {
   getUsername(){
     return localStorage.getItem("username");
   }
-  setRole(roles: any){
-    localStorage.setItem("role",roles);
+  setEmail(email: any){
+    localStorage.setItem("email",email);
+  }
+  getEmail(){
+    return localStorage.getItem("email");
+  }
+  setImg(img : any){
+    localStorage.setItem("img",img)
+  }
+  getImg(){
+    return localStorage.getItem("img")
+  }
+  setRole(roles:any){
+    localStorage.setItem("roles",roles)
   }
   getRole(){
-    return localStorage.getItem("role");
+    return localStorage.getItem("roles")
   }
 }

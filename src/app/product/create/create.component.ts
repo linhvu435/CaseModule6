@@ -25,7 +25,7 @@ createForm: any;
   create() {
     this.productService.saveProduct(this.createForm.value).subscribe()
     this.createForm.reset()
-    this.router.navigate(["/"]);
+    this.router.navigate(["/product"]);
   }
 
 }
