@@ -1,0 +1,57 @@
+
+<div class="container row">
+  <div class="col-3">
+    <ul>
+      <tr>
+        <h1>Menu</h1>
+        <select (change)="showAccount()" [(ngModel)]="id">
+          <option *ngFor="let p of role"  [value]="p.id" >{{p.name}}</option>
+        </select>
+        <li>
+          <p lick="statisticalPoint()">Show Fee InFormation</p>
+        </li>
+        <li>
+          <p lick="displayPoint()">Point</p>
+        </li>
+        <li>
+          <p lick="displayManagerCourse()">Management Course</p>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </tr>
+    </ul>
+
+  </div>
+  <div class="col-9">
+    <h2>Striped Rows</h2>
+    <p>The .table-striped class adds zebra-stripes to a table:</p>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>PhoneNumber</th>
+        <th>Birthday</th>
+        <th>Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of account, index as i">
+        <td>{{p.name}}</td>
+        <td>{{p.username}}</td>
+        <td>{{p.phoneNumber}}</td>
+        <td>{{p.birthday}}</td>
+        <td>{{p.email}}</td>
+        <td>
+          <a [routerLink]="'edit/'+p.id" class="edit"><i class="material-icons">Edit</i></a>
+
+        </td>
+        <td>
+          <a [routerLink]="'delete/'+p.id" class="delete"><i class="material-icons">Delete</i></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

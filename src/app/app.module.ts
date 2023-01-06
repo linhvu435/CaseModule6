@@ -7,7 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ProductModule} from "./product/product.module";
 import {HttpClientModule} from "@angular/common/http";
-import {environment} from "../environments/environment";
+import {AdminModule} from "./Admin/admin.module";
+
 
 
 
@@ -19,6 +20,7 @@ import {environment} from "../environments/environment";
     HomeComponent,
     NavbarComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import {environment} from "../environments/environment";
     // AngularFireStorageModule,
     // AngularFireAuthModule,
     // AngularFireModule.initializeApp(environment.firebaseConfig)
+    AdminModule
   ],
   providers: [],
   exports: [

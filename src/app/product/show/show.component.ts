@@ -15,7 +15,7 @@ export class ShowComponent implements OnInit,OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.productService.getAll().subscribe((data)=>{
-      this.products=data
+      this.products = data
   })
 }
 

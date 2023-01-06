@@ -13,6 +13,7 @@ id: any;
 editForm: any;
 product : any;
 constructor(private  productService:ProductService, private router: Router,private route : ActivatedRoute) {
+
 }
 
   ngOnInit(): void {
