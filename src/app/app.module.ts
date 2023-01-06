@@ -16,11 +16,13 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+
 
   ],
   imports: [
