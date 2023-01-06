@@ -7,6 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ProductModule} from "./product/product.module";
 import {HttpClientModule} from "@angular/common/http";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 
 
 
@@ -24,9 +28,9 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     ProductModule,
     HttpClientModule,
-    // AngularFireStorageModule,
-    // AngularFireAuthModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   exports: [
