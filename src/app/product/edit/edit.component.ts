@@ -33,6 +33,6 @@ constructor(private  productService:ProductService, private router: Router,priva
 
   edit() {
     this.productService.updateProduct(this.id, this.editForm.value).subscribe();
-    this.router.navigate(["/"]);
+    this.router.navigate(["/product"]);
   }
 }

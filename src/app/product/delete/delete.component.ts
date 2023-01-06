@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "../../service/product.service";
 
@@ -7,7 +7,7 @@ import {ProductService} from "../../service/product.service";
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.css']
 })
-export class DeleteComponent implements OnInit{
+export class DeleteComponent implements OnInit,OnChanges{
 id: any;
 product: any;
 constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router ) {
@@ -23,9 +23,18 @@ constructor(private route: ActivatedRoute, private productService: ProductServic
 
   }
 
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.route.paramMap.subscribe(paramMap => {
+      this.id = paramMap.get('id');
+      this.productService.findById(this.id).subscribe((data) => {
+        this.product = data
+      })
+    })
+  }
   delete() {
     this.productService.deleteProduct(this.id).subscribe()
-    this.router.navigate(["/"]);
+    this.router.navigate(["/product"]);
   }
 
 

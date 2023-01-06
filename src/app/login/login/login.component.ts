@@ -11,15 +11,17 @@ import {Router} from "@angular/router";
 export class LoginComponent {
   constructor(private loginService:LoginService, private router: Router) {
   }
-  loginForm = new FormGroup({
-    username: new FormControl("",Validators.required),
-    password: new FormControl("",Validators.required)
-  })
+loginForm = new FormGroup({
+  username: new FormControl("",Validators.required),
+  password: new FormControl("",Validators.required)
+})
   login(){
-    this.loginService.login(this.loginForm.value).subscribe((data)=>{
-      this.loginService.setToken(data.token);
+  this.loginService.login(this.loginForm.value).subscribe((data)=>{
+
+    console.log(JSON.parse(JSON.stringify(data)))
+      this.loginService.setToken(data.accessToken);
       this.loginService.setUsername(data.username);
-      this.loginService.setRole(JSON.stringify(data.roles));
+      this.loginService.setUsername(JSON.stringify(data.roles))
       alert("đăng nhập thành công")
       this.router.navigate(["/"]);
     })

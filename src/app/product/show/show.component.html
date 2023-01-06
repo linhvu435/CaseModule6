@@ -56,17 +56,14 @@
       <table class="table table-striped table-hover">
         <thead>
         <tr>
-          <th>#</th>
           <th>Name</th>
-          <th>Price</th>
           <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let p of products, index as i">
-          <td>{{p.id }}</td>
-          <td><a [routerLink]="'view/'+p.id"> {{p.img}}</a></td>
-          <td>{{p.name}}</td>
+          <td hidden>{{p.id }}</td>
+          <td><a [routerLink]="'view/'+p.id"> {{p.name}}</a></td>
           <td>
             <a [routerLink]="'edit/'+p.id" class="edit"><i class="material-icons">&#xE254;</i></a>
             <a [routerLink]="'delete/'+p.id" class="delete"><i class="material-icons">&#xE872;</i></a>

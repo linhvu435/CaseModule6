@@ -19,8 +19,7 @@ export class ProductService {
   }
 
   findById(id: number): Observable<Product> {
-    console.log(this.http.get<Product>(`${API_URL}/products/${id}`))
-    return this.http.get<Product>(`${API_URL}/products/${id}`);
+    return this.http.get<Product>(`${API_URL}/products/edit/${id}`);
   }
 
   updateProduct(id: number, product: Product): Observable<Product> {

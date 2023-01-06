@@ -10,7 +10,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
    login(user: any): Observable<any>{
-    return this.http.post<any>(API_URL+ '/login',user);
+    return this.http.post<any>(API_URL+ '/login/login',user);
    }
 
    setToken(token: any){
