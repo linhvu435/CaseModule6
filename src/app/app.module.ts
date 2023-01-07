@@ -11,6 +11,11 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {FormsModule} from "@angular/forms";
+import {HomeModule} from "./home/home.module";
+import { BillComponent } from './bill/bill.component';
+import {BillModule} from "./bill/bill.module";
+
 
 
 
@@ -22,6 +27,7 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    BillComponent,
 
 
   ],
@@ -32,7 +38,10 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
     HttpClientModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FormsModule,
+    HomeModule,
+    BillModule
   ],
   providers: [],
   exports: [

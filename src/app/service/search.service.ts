@@ -13,7 +13,13 @@ export class SearchService {
   constructor(private http:HttpClient) { }
 
   getAll(): Observable<Category[]> {
-    return this.http.get<Category[]>(API_URL +  '/search/getcategory');
+    return this.http.get<Category[]>(`${API_URL}/search/getallcategory`);
   }
+
+  getSearchProduct(name :String): Observable<Product[]>{
+    return this.http.get<Product[]>(`${API_URL}/search/${name}`)
+  }
+
+
 
 }

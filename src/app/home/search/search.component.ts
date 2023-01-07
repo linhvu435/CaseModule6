@@ -7,15 +7,27 @@ import {Category} from "../../model/Category";
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnChanges{
-  category!: Array<Category>
-constructor(private searchService: SearchService ) {
+export class SearchComponent implements OnChanges,OnInit{
+  category : any;
+
+  product : any;
+
+
+  constructor(private searchService: SearchService ) {
 }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnInit() {
     this.searchService.getAll().subscribe((data) => {
       this.category = data
     })
   }
+  ngOnChanges(changes: SimpleChanges) {
+  }
+
+  getSearchProduct(product : any) : void{
+    this.product =product;
+  }
+
+
 
 }
