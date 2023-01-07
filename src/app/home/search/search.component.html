@@ -1,5 +1,4 @@
 
-<body class="cnt-home">
 <!-- ============================================== HEADER ============================================== -->
 
 
@@ -18,9 +17,9 @@
 
 
 
-        <div class="sidebar-widget" *ngFor="let p of category">
+        <div class="sidebar-widget" >
           <h3 class="section-title">Lọc theo danh mục</h3>
-          <div class="sidebar-widget-body outer-top-xs">
+          <div class="sidebar-widget-body outer-top-xs" *ngFor="let p of category">
             <nav class="yamm megamenu-horizontal">
               <ul class="nav">
                 <li style="margin-top: 10px"> <i class="icon fa fa-shopping-bag" ></i> {{p.name }}  <input type="checkbox"></li>
@@ -55,9 +54,15 @@
             </div>
           </div>
           <!-- /.sidebar-widget-body -->
+          <div align="center" style="margin-top: 20px;" >
+          <button type="button" class="btn btn-warning" style="width: 200px" >Áp dụng</button>
         </div>
+        </div>
+
         </div>
         <!-- /.sidebar-widget -->
+
+
 
       </div>
       <!-- /.sidemenu-holder -->
@@ -72,9 +77,8 @@
         <!-- ============================================== SCROLL TABS ============================================== -->
         <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
           <div class="more-info-tab clearfix ">
-            <h3 class="new-product-title pull-left">All products</h3>
-            <!-- /.nav-tabs -->
-          </div>
+            <h3 class="new-product-title pull-left" *ngFor="let p of product">All products</h3>
+
             <div class="tab-pane" >
               <div class="product-slider">
                 <div class="owl-carousel">
@@ -294,4 +298,4 @@
     </div>
   </div>
 </footer>
-</body>
+

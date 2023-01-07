@@ -12,7 +12,7 @@ import {Img} from "../../model/Img";
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit{
- constructor(private productService:ProductService, private router: Router,private storage: AngularFireStorage) {
+ constructor(private productService:ProductService, private router: Router,private storage: AngularFireStorage,) {
  }
 createForm: any;
 

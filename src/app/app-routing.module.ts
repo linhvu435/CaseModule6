@@ -16,9 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
   },
   {
+<<<<<<< HEAD
     path: 'search',
     loadChildren: () => import('./search/search.module').then(module => module.SearchModule)
   },
+=======
+    path: 'bill',
+    loadChildren: () => import('./bill/bill.module').then(module => module.BillModule)
+  },
+
+>>>>>>> 0cdff56c514c3e3ddc86305f975282630cc27fb1
 
 ];
 
