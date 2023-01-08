@@ -5,6 +5,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {RegisterComponent} from "./register/register.component";
 
     imports: [
         CommonModule,
-        LoginRoutingModule
+        LoginRoutingModule,
+        ReactiveFormsModule
     ]
 })
 export class LoginModule { }
