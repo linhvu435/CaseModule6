@@ -14,39 +14,26 @@
 
         <nav class="yamm megamenu-horizontal">
           <ul class="nav">
-            <li> <a href="/allbill" style="color: red"><b style="color: black">Toàn bộ đơn hàng </b> <b>(9)</b> </a> </li>
+            <li> <a routerLink="/allbill" style="color: red"><b style="color: black">Toàn bộ đơn hàng </b> <b>(9)</b> </a> </li>
 
           </ul>
           <!-- /.nav -->
         </nav>
-        <nav class="yamm megamenu-horizontal">
-          <ul class="nav">
-            <li> <a href="/choxacnhan" style="color: red"> <b style="color: black">Chờ xác nhận </b>  <b>(9)</b></a> </li>
 
-          </ul>
-          <!-- /.nav -->
-        </nav>
-        <nav class="yamm megamenu-horizontal">
-          <ul class="nav">
-            <li> <a href="/danggiao" style="color: red"><b style="color: black">Đang giao </b> <b>(9)</b></a> </li>
+        <div *ngFor="let m of billstatus" >
+          <nav class="yamm megamenu-horizontal">
+            <ul class="nav">
+              <li>  <a routerLink="/allbil" style="color: red" (click)="showbillbystatus(m.id)"> <b style="color: black" > {{m.name}} </b>
+                <b >
 
-          </ul>
-          <!-- /.nav -->
-        </nav>
-        <nav class="yamm megamenu-horizontal">
-          <ul class="nav">
-            <li> <a href="/thanhcong" style="color: red"><b style="color: black">Thành công </b> <b>(9)</b></a> </li>
+              </b></a></li>
 
-          </ul>
-          <!-- /.nav -->
-        </nav>
-        <nav class="yamm megamenu-horizontal">
-          <ul class="nav">
-            <li> <a href="/dahuy" style="color: red"  > <b style="color: black">Đã hủy </b> <b>(9)</b></a> </li>
+            </ul>
+            <!-- /.nav -->
+          </nav>
+        </div>
 
-          </ul>
-          <!-- /.nav -->
-        </nav>
+
 
         <!-- /.tag-list -->
       </div>

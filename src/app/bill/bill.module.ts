@@ -2,20 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BillRoutingModule } from './bill-routing.module';
-import { ThanhcongComponent } from './thanhcong/thanhcong.component';
 import { NavbarleftbillComponent } from './navbarleftbill/navbarleftbill.component';
-import {ChoxacnhanComponent} from "./choxacnhan/choxacnhan.component";
 import {DanggiaoComponent} from "./danggiao/danggiao.component";
-import {DahuyComponent} from "./dahuy/dahuy.component";
+import {BillComponent} from "./bill.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
-    ThanhcongComponent,
+
     NavbarleftbillComponent,
-    ChoxacnhanComponent,
+
     DanggiaoComponent,
-    DahuyComponent,
+    BillComponent,
 
   ],
   exports: [
@@ -23,7 +22,8 @@ import {DahuyComponent} from "./dahuy/dahuy.component";
   ],
   imports: [
     CommonModule,
-    BillRoutingModule
+    BillRoutingModule,
+    FormsModule
   ]
 })
 export class BillModule { }

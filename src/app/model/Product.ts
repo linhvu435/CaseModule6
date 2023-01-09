@@ -1,4 +1,5 @@
 import {Category} from "./Category";
+import {Shop} from "./Shop";
 
 export class Product {
   id!: number
@@ -9,6 +10,5 @@ export class Product {
   amount!: number
   category!: Category;
 
-
-
+  shop!: Shop;
 }

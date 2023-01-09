@@ -19,7 +19,7 @@ export class LoginService {
     return localStorage.getItem("id");
    }
    setToken(token: any){
-    localStorage.setItem("token",token);
+    localStorage.setItem("token",JSON.stringify(token));
    }
    getToken(){
     return localStorage.getItem("token");
