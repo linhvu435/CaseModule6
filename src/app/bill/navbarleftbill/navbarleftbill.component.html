@@ -14,23 +14,25 @@
 
         <nav class="yamm megamenu-horizontal">
           <ul class="nav">
-            <li> <a href="/allbill" style="color: red"><b style="color: black">Toàn bộ đơn hàng </b> <b>(9)</b> </a> </li>
+            <li> <a routerLink="/allbill" style="color: red"><b style="color: black">Toàn bộ đơn hàng </b> <b>(9)</b> </a> </li>
 
           </ul>
           <!-- /.nav -->
         </nav>
-        <div *ngFor="let m of billstatus">
+
+        <div *ngFor="let m of billstatus" >
           <nav class="yamm megamenu-horizontal">
             <ul class="nav">
-              <li>  <a style="color: red"> <b style="color: black">{{m.name}} </b>
+              <li>  <a routerLink="/allbil" style="color: red" (click)="showbillbystatus(m.id)"> <b style="color: black" > {{m.name}} </b>
                 <b >
 
-              </b></a> </li>
+              </b></a></li>
 
             </ul>
             <!-- /.nav -->
           </nav>
         </div>
+
 
 
         <!-- /.tag-list -->

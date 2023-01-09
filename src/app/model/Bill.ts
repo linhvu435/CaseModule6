@@ -5,7 +5,6 @@ import {Product} from "./Product";
 export class Bill {
   id!: number
 
-  price!:number;
   date!:Date;
   billStatus!:BillStatus;
 

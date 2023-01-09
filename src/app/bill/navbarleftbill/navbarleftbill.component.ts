@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SearchService} from "../../service/search.service";
 import {BillserviceService} from "../../service/billservice/billservice.service";
+import {BillComponent} from "../bill.component";
 
 @Component({
   selector: 'app-navbarleftbill',
@@ -10,8 +11,9 @@ import {BillserviceService} from "../../service/billservice/billservice.service"
 export class NavbarleftbillComponent implements OnInit{
   billstatus:any;
 
-  bill:any;
-  constructor(private showbillshop: BillserviceService ) {
+
+
+  constructor(private showbillshop: BillserviceService ,private bill : BillComponent) {
   }
 
   ngOnInit() {
@@ -19,8 +21,11 @@ export class NavbarleftbillComponent implements OnInit{
       this.billstatus = data
     })
 
-    this.showbillshop.getAllBillshop().subscribe((data) => {
-      this.bill = data
+  }
+
+  showbillbystatus(id:number):void{
+    this.showbillshop.showbillbystatus(id).subscribe((data) => {
+      this.bill.bill = data
     })
   }
 }

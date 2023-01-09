@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BillserviceService} from "../service/billservice/billservice.service";
 import {Bill} from "../model/Bill";
 import {LoginService} from "../service/login.service";
+import {Product} from "../model/Product";
 
 @Component({
   selector: 'app-bill',
@@ -11,9 +12,10 @@ import {LoginService} from "../service/login.service";
 export class BillComponent implements OnInit{
   bill!: Bill[];
 
-  bill1 !: Bill[];
+  product1!:any;
 
-  constructor(private showbillshop: BillserviceService ,private login:LoginService) {
+
+  constructor(private showbillshop: BillserviceService  ) {
   }
 
   ngOnInit() {
@@ -21,15 +23,15 @@ export class BillComponent implements OnInit{
 
     this.showbillshop.getAllBillshop().subscribe((data) => {
       this.bill = data
+
+      for (let i = 0; i < this.bill[0].product.length; i++) {
+        console.log(this.bill[0].product[i])
+      }
+
+
+
     })
   }
 
-  xembill():void{
-    for (let i = 0; i < this.bill.length; i++) {
-      if (this.bill[i].billStatus.id==1){
-        this.bill1.push(this.bill[i])
-      }
-    }
-    this.bill=this.bill1;
-  }
+
 }

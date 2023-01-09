@@ -25,4 +25,8 @@ export class BillserviceService {
     return this.http.get<Bill[]>(`${API_URL}/order/getallbillstatus`);
   }
 
+  showbillbystatus(id:number):Observable<Bill[]>{
+    return this.http.get<Bill[]>(`${API_URL}/order/showBillShop/${id}`);
+  }
+
 }
