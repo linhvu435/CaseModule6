@@ -1,5 +1,4 @@
 
-<body class="cnt-home">
 <!-- ============================================== HEADER ============================================== -->
 
 
@@ -8,167 +7,97 @@
   <div class="container">
     <div class="row">
       <!-- ============================================== SIDEBAR ============================================== -->
-      <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
 
         <!-- ================================== TOP NAVIGATION ================================== -->
 
 
-        <div class="side-menu animate-dropdown outer-bottom-xs">
-          <div class="head"><i class="icon fa fa-align-justify fa-fw"></i>Bộ lọc</div>
+<app-navbarleftbill></app-navbarleftbill>        <!-- /.sidebar-widget -->
 
 
 
-        <div class="sidebar-widget" *ngFor="let p of category">
-          <h3 class="section-title">Lọc theo danh mục</h3>
-          <div class="sidebar-widget-body outer-top-xs">
-            <nav class="yamm megamenu-horizontal">
-              <ul class="nav">
-                <li style="margin-top: 10px"> <i class="icon fa fa-shopping-bag" ></i> {{p.name }}  <input type="checkbox"></li>
 
-              </ul>
-              <!-- /.nav -->
-            </nav>
-
-            <!-- /.tag-list -->
-          </div>
-          <!-- /.sidebar-widget-body -->
-        </div>
-        <div class="sidebar-widget">
-          <h3 class="section-title">Lọc Theo Khoảng Giá</h3>
-          <div class="sidebar-widget-body outer-top-xs">
-            <div class="tag-list">
-              Từ <input type="number" class="item"  placeholder="Nhập giá min" style="width: 70px">
-              Đến <input type="number" class="item"  placeholder="Nhập giá max" style="width: 70px">
-            </div>
-            <!-- /.tag-list -->
-          </div>
-          <!-- /.sidebar-widget-body -->
-        </div>
-
-        <!-- ============================================== PRODUCT TAGS ============================================== -->
-        <div class="sidebar-widget product-tag">
-          <h3 class="section-title">Lọc theo nơi bán</h3>
-          <div class="sidebar-widget-body outer-top-xs">
-            <div class="tag-list">
-              <a class="item" ><input type="checkbox" title="">Hà Nội</a>
-              <a class="item" ><input type="checkbox" title="">Baws</a>
-            </div>
-          </div>
-          <!-- /.sidebar-widget-body -->
-        </div>
-        </div>
-        <!-- /.sidebar-widget -->
-
-      </div>
       <!-- /.sidemenu-holder -->
       <!-- ============================================== SIDEBAR : END ============================================== -->
 
       <!-- ============================================== CONTENT ============================================== -->
-      <div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
+
         <!-- ========================================== SECTION – HERO ========================================= -->
 
 
         <!-- ========================================= SECTION – HERO : END ========================================= -->
         <!-- ============================================== SCROLL TABS ============================================== -->
-        <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
-          <div class="more-info-tab clearfix ">
-            <h3 class="new-product-title pull-left">All products</h3>
-            <!-- /.nav-tabs -->
+        <div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder" style="margin-top: 50px">
+
+          <!-- ============================================== SCROLL TABS ============================================== -->
+          <div id="product-tabs-slider1" class="scroll-tabs outer-top-vs wow fadeInUp">
+            <div class="more-info-tab clearfix ">
+              <h3 class="new-product-title pull-left">Đơn hàng của shop</h3>
+            </div>
           </div>
-            <div class="tab-pane" >
-              <div class="product-slider">
-                <div class="owl-carousel">
-                  <div class="item ">
-                    <div class="products">
-                      <div class="product">
-                        <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img src="\assets\images\products\p18.jpg" alt=""></a> </div>
-                          <!-- /.image -->
-
-                          <div class="tag sale"><span>sale</span></div>
-                        </div>
-                        <!-- /.product-image -->
-
-                        <div class="product-info text-left">
-                          <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
-                          <div class="rating rateit-small"></div>
-                          <div class="description"></div>
-                          <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
-                          <!-- /.product-price -->
-
-                        </div>
-                        <!-- /.product-info -->
-                        <div class="cart clearfix animate-effect">
-                          <div class="action">
-                            <ul class="list-unstyled">
-                              <li class="add-cart-button btn-group">
-                                <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-                              </li>
-                              <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                              <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
-                            </ul>
+          <div *ngFor="let b of bill">
+          <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
+            <div class="more-info-tab clearfix ">
+              <h3 class="new-product-title pull-left">Người mua : {{b.account.name}}     Ngày mua:{{b.date}}</h3>
+            </div>
+            <div class="tab-content outer-top-xs">
+              <div class="tab-pane in active" id="all">
+                <div class="product-slider">
+                  <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
+                    <div *ngFor="let c of b.product">
+                      <div class="item item-carousel">
+                      <div class="products">
+                        <div class="product">
+                          <div class="product-image">
+                            <!-- /.image -->
+                            <div class="image"><a href="detail.html"><img src="" alt=""></a></div>
+                             <div class="tag new"><span>new</span></div>
                           </div>
-                          <!-- /.action -->
-                        </div>
-                        <!-- /.cart -->
-                      </div>
-                      <!-- /.product -->
+                          <!-- /.product-image -->
+                          <div class="product-info text-left">{{c.detail}}
+                            <h3 class="name"><a href="detail.html">{{c.name}}</a></h3>
+                            <div class="rating rateit-small"></div>
+                            <div class="description"></div>
+                            <div class="product-price"> <span class="price">{{c.price}}</span></div>
+                            <!-- /.product-price -->
 
-                    </div>
-                    <!-- /.products -->
-                  </div>
-
-                  <div class="item ">
-                    <div class="products">
-                      <div class="product">
-                        <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img src="\assets\images\products\p18.jpg" alt=""></a> </div>
-                          <!-- /.image -->
-
-                          <div class="tag hot"><span>hot</span></div>
-                        </div>
-                        <!-- /.product-image -->
-
-                        <div class="product-info text-left">
-                          <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
-                          <div class="rating rateit-small"></div>
-                          <div class="description"></div>
-                          <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
-                          <!-- /.product-price -->
-
-                        </div>
-                        <!-- /.product-info -->
-                        <div class="cart clearfix animate-effect">
-                          <div class="action">
-                            <ul class="list-unstyled">
-                              <li class="add-cart-button btn-group">
-                                <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-                              </li>
-                              <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                              <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
-                            </ul>
                           </div>
-                          <!-- /.action -->
+                          <!-- /.product-info -->
+                          <!-- /.cart -->
                         </div>
-                        <!-- /.cart -->
-                      </div>
-                      <!-- /.product -->
+                        <!-- /.product -->
 
+                      </div>
+                      <!-- /.products -->
                     </div>
-                    <!-- /.products -->
+                    </div>
+
                   </div>
+                  <!-- /.home-owl-carousel -->
                 </div>
+                <!-- /.product-slider -->
               </div>
+              <!-- /.tab-pane -->
+              <div style="margin-bottom: 10px">
+                <h4>Trạng thái : {{b.billStatus.name}}</h4>
+                <h4>Tổng tiền : {{b.totalprice}}</h4>
+              </div>
+
+              <div class="d-grid gap-2" *ngIf="b.billStatus.id==1">
+                <button class="btn btn-primary" type="button" style="width: 98%">Xác nhận đơn hàng</button>
+                <h3>  </h3>
+              </div>
+              <div class="d-grid gap-2" *ngIf="b.billStatus.id==2">
+                <button class="btn btn-primary" type="button" style="width: 98%" >Hủy đơn hàng</button>
+                <h3>  </h3>
+              </div>
+
+
             </div>
 
-
-
+          </div>
+          </div>
         </div>
 
-      </div>
-    </div>
   </div>
 </div>
 
@@ -294,4 +223,5 @@
     </div>
   </div>
 </footer>
-</body>
+
+</div>

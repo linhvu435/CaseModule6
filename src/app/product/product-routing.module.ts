@@ -5,6 +5,7 @@ import {DeleteComponent} from "./delete/delete.component";
 import {EditComponent} from "./edit/edit.component";
 import {ViewComponent} from "./view/view.component";
 import {ShowComponent} from "./show/show.component";
+import {CustomerviewComponent} from "./customerview/customerview.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'view/:id', component: ViewComponent
+  },
+  {
+    path: 'view/customer/:id', component: CustomerviewComponent
   }
 ];
 

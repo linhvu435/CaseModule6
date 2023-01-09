@@ -10,6 +10,10 @@ const API_URL = `${environment.apiUrl}`;
 export class ProductService {
 
   constructor(private http:HttpClient) { }
+  getProductByIdShop(id : number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${API_URL}/products/${id}`,);
+  }
+
   getAll(): Observable<Product[]> {
     return this.http.get<Product[]>(API_URL +  '/products');
   }

@@ -1,6 +1,7 @@
-export class Category {
+export class BillStatus {
   id!: number
   name!: string
+
 
 
   constructor(id: number, name: string) {

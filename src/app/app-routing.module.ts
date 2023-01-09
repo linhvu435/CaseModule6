@@ -15,6 +15,7 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
   },
+<<<<<<< HEAD
   {
 
     path: 'admin',
@@ -25,7 +26,13 @@ const routes: Routes = [
     loadChildren: () => import('./search/search.module').then(module => module.SearchModule)
 
   }
+=======
+>>>>>>> c2d60439f0dac463ec75498140406ab75a98771c
 
+  {
+    path: 'bill',
+    loadChildren: () => import('./bill/bill.module').then(module => module.BillModule)
+  },
 ];
 
 @NgModule({

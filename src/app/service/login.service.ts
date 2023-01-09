@@ -12,9 +12,14 @@ export class LoginService {
    login(user: any): Observable<any>{
     return this.http.post<any>(API_URL+ '/login/login',user);
    }
-
+   setId(id: any){
+    localStorage.setItem("id",id)
+   }
+   getId(){
+    return localStorage.getItem("id");
+   }
    setToken(token: any){
-    localStorage.setItem("token",token);
+    localStorage.setItem("token",JSON.stringify(token));
    }
    getToken(){
     return localStorage.getItem("token");

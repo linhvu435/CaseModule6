@@ -1,3 +1,6 @@
+import {Category} from "./Category";
+import {Shop} from "./Shop";
+
 export class Product {
   id!: number
   name!: string
@@ -5,4 +8,7 @@ export class Product {
   detail! :string
   price!: number
   amount!: number
+  category!: Category;
+
+  shop!: Shop;
 }

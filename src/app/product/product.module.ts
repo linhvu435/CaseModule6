@@ -8,6 +8,7 @@ import {DeleteComponent} from "./delete/delete.component";
 import {ViewComponent} from "./view/view.component";
 import { ShowComponent } from './show/show.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CustomerviewComponent } from './customerview/customerview.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     DeleteComponent,
     ViewComponent,
     ShowComponent,
+    CustomerviewComponent,
   ],
   imports: [
     CommonModule,
