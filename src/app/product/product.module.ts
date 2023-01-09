@@ -7,7 +7,7 @@ import {EditComponent} from "./edit/edit.component";
 import {DeleteComponent} from "./delete/delete.component";
 import {ViewComponent} from "./view/view.component";
 import { ShowComponent } from './show/show.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CustomerviewComponent } from './customerview/customerview.component';
 
 
@@ -20,10 +20,11 @@ import { CustomerviewComponent } from './customerview/customerview.component';
     ShowComponent,
     CustomerviewComponent,
   ],
-  imports: [
-    CommonModule,
-    ProductRoutingModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        ProductRoutingModule,
+        ReactiveFormsModule,
+        FormsModule
+    ]
 })
 export class ProductModule { }

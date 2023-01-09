@@ -33,4 +33,23 @@ export class ProductService {
   deleteProduct(id: number): Observable<Product> {
     return this.http.delete<Product>(`${API_URL}/products/${id}`);
   }
+  GetCarts(){
+    // @ts-ignore
+    let CartJson = JSON.parse(localStorage.getItem("carts"));
+    return CartJson
+  }
+  saveCart(carts :any){
+    let cartJson = JSON.stringify(carts)
+    localStorage.setItem("carts",cartJson)
+  }
+
+  getCartTotalPrice(){
+    let carts : any = this.GetCarts();
+    let total : number = 0;
+    carts.forEach((item: any)=>{
+      total += item.amount*item.price
+    })
+    return total;
+  }
+
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
+import {CartComponent} from "./cart/cart/cart.component";
 
 
 const routes: Routes = [
@@ -15,17 +16,18 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
   },
+  // {
+  //   path: 'search',
+  //   loadChildren: () => import('./search/search.module').then(module => module.SearchModule)
+  // },
   {
-<<<<<<< HEAD
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then(module => module.SearchModule)
-  },
-=======
     path: 'bill',
     loadChildren: () => import('./bill/bill.module').then(module => module.BillModule)
   },
+  {
+    path: 'cart', component: CartComponent
+  }
 
->>>>>>> 0cdff56c514c3e3ddc86305f975282630cc27fb1
 
 ];
 

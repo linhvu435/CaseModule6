@@ -15,13 +15,7 @@ import {FormsModule} from "@angular/forms";
 import {HomeModule} from "./home/home.module";
 import { BillComponent } from './bill/bill.component';
 import {BillModule} from "./bill/bill.module";
-
-
-
-
-
-
-
+import { CartComponent } from './cart/cart/cart.component';
 
 
 @NgModule({
@@ -30,6 +24,7 @@ import {BillModule} from "./bill/bill.module";
     HomeComponent,
     NavbarComponent,
     BillComponent,
+    CartComponent,
 
   ],
   imports: [
