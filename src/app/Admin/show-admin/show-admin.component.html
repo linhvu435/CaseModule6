@@ -1,6 +1,196 @@
+<header class="header-style-1">
 
-<div class="container row">
-  <div class="col-3">
+  <!-- ============================================== TOP MENU ============================================== -->
+  <div class="top-bar animate-dropdown">
+    <div class="container">
+      <div class="header-top-inner">
+        <div class="cnt-account">
+          <ul class="list-unstyled">
+            <li><a routerLink="/product"><i class=""></i>My Shop</a></li>
+            <li><a href="#"><i class="icon fa fa-user"></i>My Account</a></li>
+            <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
+            <li><a href="#"><i class="icon fa fa-check"></i>Checkout</a></li>
+            <li><a routerLink="/login/create"><i class="icon fa fa-heart"></i>Register</a></li>
+            <li><a routerLink="/login"><i class="icon fa fa-lock"></i>Login</a></li>
+          </ul>
+        </div><!-- /.cnt-account -->
+
+        <div class="cnt-block">
+          <ul class="list-unstyled list-inline">
+
+            <li class="dropdown dropdown-small">
+              <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">English </span><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">English</a></li>
+                <li><a href="#">French</a></li>
+                <li><a href="#">German</a></li>
+              </ul>
+            </li>
+          </ul><!-- /.list-unstyled -->
+        </div><!-- /.cnt-cart -->
+        <div class="clearfix"></div>
+      </div><!-- /.header-top-inner -->
+    </div><!-- /.container -->
+  </div><!-- /.header-top -->
+  <!-- ============================================== TOP MENU : END ============================================== -->
+  <div class="main-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+          <!-- ============================================================= LOGO ============================================================= -->
+          <div class="logo">
+            <a href="/home">
+
+              <img src="assets\images\logo.png" alt="">
+
+            </a>
+          </div><!-- /.logo -->
+          <!-- ============================================================= LOGO : END ============================================================= -->				</div><!-- /.logo-holder -->
+
+        <div class="col-xs-12 col-sm-12 col-md-7 top-search-holder">
+          <!-- /.contact-row -->
+          <!-- ============================================================= SEARCH AREA ============================================================= -->
+          <div class="search-area">
+
+            <div class="control-group">
+
+              <ul class="categories-filter animate-dropdown">
+              </ul>
+
+              <input class="search-field"placeholder="Enter Name orNumber" #name >
+
+              <a class="search-button" (click)="searchByname(name.value)"></a>
+
+            </div>
+
+          </div><!-- /.search-area -->
+          <!-- ============================================================= SEARCH AREA : END ============================================================= -->
+        </div><!-- /.top-search-holder -->
+
+        <div class="col-xs-12 col-sm-12 col-md-2 animate-dropdown top-cart-row">
+          <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+
+          <div class="dropdown dropdown-cart">
+            <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+              <div class="items-cart-inner">
+                <div class="basket">
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+                </div>
+                <div class="basket-item-count"><span class="count">2</span></div>
+
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="cart-item product-summary">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <div class="image">
+                        <a href="detail.html"><img src="assets\images\cart.jpg" alt=""></a>
+                      </div>
+                    </div>
+                    <div class="col-xs-7">
+
+                      <h3 class="name"><a href="index.php?page-detail">Simple Product</a></h3>
+                      <div class="price">$600.00</div>
+                    </div>
+                    <div class="col-xs-1 action">
+                      <a href="#"><i class="fa fa-trash"></i></a>
+                    </div>
+                  </div>
+                </div><!-- /.cart-item -->
+                <div class="clearfix"></div>
+                <hr>
+
+                <div class="clearfix cart-total">
+                  <div class="pull-right">
+
+                    <span class="text">Sub Total :</span><span class='price'>$600.00</span>
+
+                  </div>
+                  <div class="clearfix"></div>
+
+                  <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
+                </div><!-- /.cart-total-->
+
+
+              </li>
+            </ul><!-- /.dropdown-menu-->
+          </div><!-- /.dropdown-cart -->
+
+          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= -->				</div><!-- /.top-cart-row -->
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+  </div><!-- /.main-header -->
+
+</header>
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container row">-->
+<!--  <div class="col-xs-12 col-sm-12 col-md-3 sidebar" style="margin-top: 50px">-->
+
+<!--    &lt;!&ndash; ================================== TOP NAVIGATION ================================== &ndash;&gt;-->
+
+
+<!--    <div class="side-menu animate-dropdown outer-bottom-xs">-->
+<!--      <div class="head"><i class="icon fa fa-align-justify fa-fw"></i>Danh Sách</div>-->
+
+
+
+<!--      <div class="sidebar-widget" >-->
+<!--        <h3 class="section-title">Trạng thái đơn hàng</h3>-->
+<!--        <div class="sidebar-widget-body outer-top-xs" >-->
+
+<!--          <nav class="yamm megamenu-horizontal">-->
+<!--            <ul class="nav">-->
+<!--              <li> <a routerLink="/allbill" style="color: red"><b style="color: black">Toàn bộ đơn hàng </b> <b>(9)</b> </a> </li>-->
+
+<!--            </ul>-->
+<!--            &lt;!&ndash; /.nav &ndash;&gt;-->
+<!--          </nav>-->
+
+<!--          <div  >-->
+<!--            <nav class="yamm megamenu-horizontal">-->
+<!--              <ul class="nav">-->
+<!--                <li>  <a routerLink="/allbil" style="color: red" ><b style="color: black" > </b>-->
+<!--                  <b >-->
+
+<!--                  </b></a></li>-->
+
+<!--              </ul>-->
+<!--              &lt;!&ndash; /.nav &ndash;&gt;-->
+<!--            </nav>-->
+<!--          </div>-->
+
+
+
+<!--          &lt;!&ndash; /.tag-list &ndash;&gt;-->
+<!--        </div>-->
+<!--        &lt;!&ndash; /.sidebar-widget-body &ndash;&gt;-->
+<!--      </div>-->
+
+
+<!--      &lt;!&ndash; ============================================== PRODUCT TAGS ============================================== &ndash;&gt;-->
+
+
+<!--    </div>-->
+<!--    &lt;!&ndash; /.sidebar-widget &ndash;&gt;-->
+
+
+
+<!--  </div>-->
+
+    <div class="col-3">
     <ul>
       <tr>
         <h1>Menu</h1>
@@ -24,8 +214,11 @@
 
   </div>
   <div class="col-9">
-    <h2>Striped Rows</h2>
-    <p>The .table-striped class adds zebra-stripes to a table:</p>
+    <h2>ShowAccount</h2>
+<!--    <div>-->
+<!--      <input class="form-control" placeholder="Enter Name orNumber" #name>-->
+<!--      <button (click)="searchByname(name.value)">Search</button>-->
+<!--    </div>-->
     <table class="table table-striped">
       <thead>
       <tr>
@@ -37,7 +230,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let p of account, index as i">
+      <tr *ngFor="let p of account | paginate: { itemsPerPage: 2, currentPage: S}">
         <td>{{p.name}}</td>
         <td>{{p.username}}</td>
         <td>{{p.phoneNumber}}</td>
@@ -45,13 +238,14 @@
         <td>{{p.email}}</td>
         <td>
           <a [routerLink]="'edit/'+p.id" class="edit"><i class="material-icons">Edit</i></a>
-
         </td>
         <td>
-          <a [routerLink]="'delete/'+p.id" class="delete"><i class="material-icons">Delete</i></a>
+          <a [routerLink]="'showOne/'+p.id" class="delete"><i class="material-icons">View</i></a>
         </td>
+
       </tr>
+      <pagination-controls (pageChange)="S = ($event)"></pagination-controls>
       </tbody>
     </table>
   </div>
-</div>
+

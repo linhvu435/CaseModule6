@@ -7,8 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ProductModule} from "./product/product.module";
 import {HttpClientModule} from "@angular/common/http";
-import {AdminModule} from "./Admin/admin.module";
-
+import {environment} from "../environments/environment";
+import { ShowAdminComponent } from './Admin/show-admin/show-admin.component';
 
 
 
@@ -19,7 +19,7 @@ import {AdminModule} from "./Admin/admin.module";
     AppComponent,
     HomeComponent,
     NavbarComponent,
-
+    // ShowAdminComponent,
 
   ],
   imports: [
@@ -30,7 +30,6 @@ import {AdminModule} from "./Admin/admin.module";
     // AngularFireStorageModule,
     // AngularFireAuthModule,
     // AngularFireModule.initializeApp(environment.firebaseConfig)
-    AdminModule
   ],
   providers: [],
   exports: [

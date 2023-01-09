@@ -18,8 +18,7 @@ constructor(private route: ActivatedRoute, private productService: ProductServic
       this.id = paramMap.get('id');
       this.productService.findById(this.id).subscribe((data) => {
         this.product = data
-      })
-    })
+      })    })
 
   }
 
@@ -33,8 +32,9 @@ constructor(private route: ActivatedRoute, private productService: ProductServic
     })
   }
   delete() {
-    this.productService.deleteProduct(this.id).subscribe()
-    this.router.navigate(["/product"]);
+    this.productService.deleteProduct(this.id).subscribe((data)=>{
+      this.router.navigate(["/product"]);
+    })
   }
 
 

@@ -1,22 +1,37 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {AdminService} from "../../service/admin.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Account} from "../../model/Account";
+import {Roles} from "../../model/Roles";
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditComponent implements OnInit{
+export class EditComponent implements OnInit {
 
   id: any;
+  role!: Array<Roles>
+  account: Account = new Account();
+  editForm = new FormGroup({
+    name: new FormControl(this.account.name),
+    username: new FormControl(this.account.username),
+    email: new FormControl(this.account.email),
+    phoneNumber: new FormControl(this.account.phoneNumber),
+    birthday: new FormControl(this.account.birthday),
+    date: new FormControl(this.account.date),
+    address: new FormControl(this.account.address),
+    img: new FormControl(this.account.img),
+    status: new FormControl(this.account.status),
+    roles: new FormControl(this.account.roles),
+  });
 
-  account: any;
-  editForm: any;
-  constructor(private adminService:AdminService,private router: Router, private route: ActivatedRoute) {
+  constructor(private adminService: AdminService, private router: Router, private route: ActivatedRoute) {
 
   }
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
@@ -37,10 +52,17 @@ export class EditComponent implements OnInit{
         })
       })
     })
+
+    this.adminService.showroles().subscribe((data)=>{
+      console.log(data)
+      this.role=data
+    })
   }
-  update() {
-    this.account.updateAccount(this.id, this.editForm.value).subscribe();
-    this.router.navigate(["/product"]);
+
+
+  edit() {
+    this.adminService.updateProduct(this.id,this.editForm.value).subscribe();
+    this.router.navigate(["/admin"]);
   }
 }
 

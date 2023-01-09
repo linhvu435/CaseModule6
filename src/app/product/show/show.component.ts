@@ -19,10 +19,12 @@ export class ShowComponent implements OnInit,OnChanges {
   })
 }
 
+
   ngOnInit(): void {
     this.productService.getAll().subscribe((data) => {
       this.products = data
     })
   }
+
 
 }

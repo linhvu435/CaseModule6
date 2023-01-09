@@ -14,58 +14,61 @@
   <script src="../view/view.component.ts"></script>
   <style>
     body {
-      font-family: 'Varela Round';font-size: 20px;
+      font-family: 'Varela Round';
+      font-size: 20px;
     }
   </style>
 </head>
 <div class="container" style="width: 500px">
   <br>
   <h2>Edit <b>Account</b></h2>
-  <form style="width: 500px" [formGroup]="editForm" >
-<!--    <form style="width: 500px" [formGroup]="editForm" (ngSubmit)="edit()">-->
+
+  <form style="width: 500px" [formGroup]="editForm" (ngSubmit)="edit()">
     <div class="form-group">
-      <label >Name</label>
-      <input  class="form-control"  placeholder="Enter name" formControlName="name" >
+      <label>Name</label>
+      <input class="form-control" placeholder="Enter name" formControlName="name">
     </div>
     <div class="form-group">
-      <label >Username</label>
-      <input  class="form-control"  placeholder="Enter username" formControlName="username" >
+      <label>Username</label>
+      <input class="form-control" placeholder="Enter username" formControlName="username">
     </div>
     <div class="form-group">
-      <label >Email</label>
-      <input  class="form-control"  placeholder="Enter email" formControlName="email" >
+      <label>Email</label>
+      <input class="form-control" placeholder="Enter email" formControlName="email">
     </div>
     <div class="form-group">
-      <label >PhoneNumber</label>
-      <input  class="form-control"  placeholder="Enter phoneNumber" formControlName="phoneNumber" >
+      <label>PhoneNumber</label>
+      <input class="form-control" placeholder="Enter phoneNumber" formControlName="phoneNumber">
     </div>
-  <div class="form-group">
-    <label >birthday</label>
-    <input  class="form-control"  placeholder="Enter birthday" formControlName="birthday" >
-  </div>
-  <div class="form-group">
-    <label >date</label>
-    <input  class="form-control"  placeholder="Enter date" formControlName="date" >
-  </div>
-  <div class="form-group">
-    <label >address</label>
-    <input  class="form-control"  placeholder="Enter address" formControlName="address" >
-  </div>
-  <div class="form-group">
-    <label >img</label>
-    <input  class="form-control"  placeholder="Enter img" formControlName="img" >
-  </div>
-  <div class="form-group">
-    <label >status</label>
-    <input  class="form-control"  placeholder="Enter status" formControlName="status" >
-  </div>
-  <div class="form-group">
-    <label >roles</label>
-    <input  class="form-control"  placeholder="Enter roles" formControlName="roles" >
-  </div>
+    <div class="form-group">
+      <label>birthday</label>
+      <input class="form-control" placeholder="Enter birthday" formControlName="birthday">
+    </div>
+    <div class="form-group">
+      <label>date</label>
+      <input class="form-control" placeholder="Enter date" formControlName="date">
+    </div>
+    <div class="form-group">
+      <label>address</label>
+      <input class="form-control" placeholder="Enter address" formControlName="address">
+    </div>
+    <div class="form-group">
+      <label>img</label>
+      <input class="form-control" placeholder="Enter img" formControlName="img">
+    </div>
+    <div class="form-group">
+      <label>status</label>
+      <input class="form-control" placeholder="Enter status" formControlName="status">
+    </div>
+    <div class="form-group">
+      <label>roles</label>
+      <select>
+        <option *ngFor="let p of role" [value]="p.id" [ngValue]="p">{{p.name}}</option>
+      </select>
+    </div>
 
 
     <button type="submit" class="btn btn-warning" style="margin-right: 10px">Edit</button>
-    <a routerLink="/product" type="submit" class="btn btn-info">Cancel</a>
+    <a routerLink="/admin" type="submit" class="btn btn-info">Cancel</a>
   </form>
 </div>

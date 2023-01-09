@@ -9,6 +9,7 @@ export const environment = {
   firebaseConfig : {
     apiKey: "AIzaSyB5AGoncucmVwqq-XxKw5do1Jg_Y_WYGjA",
     authDomain: "module6-e6af1.firebaseapp.com",
+    databaseURL:"https://module6-e6af1-default-rtdb.firebaseio.com/",
     projectId: "module6-e6af1",
     storageBucket: "module6-e6af1.appspot.com",
     messagingSenderId: "626314778454",

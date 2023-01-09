@@ -9,30 +9,45 @@ import {Account} from "../../model/Account";
   templateUrl: './show-admin.component.html',
   styleUrls: ['./show-admin.component.css']
 })
-export class ShowAdminComponent implements OnInit ,OnChanges{
+export class ShowAdminComponent implements OnInit {
   constructor(private adminService: AdminService) {
   }
+
   id: number = 1;
+  S: number = 1;
   role!: Array<Roles>
   account!: Account[]
 
   ngOnInit(): void {
-    this.adminService.showroles().subscribe((data)=>{
+    this.adminService.showroles().subscribe((data) => {
       console.log(data)
-      this.role=data
+      this.role = data
     })
     this.showAccount()
   }
 
-  showAccount(){
-    this.adminService.showAccountRoles(this.id).subscribe((data)=>{
+  showAccount() {
+    this.adminService.showAccountRoles(this.id).subscribe((data) => {
       console.log(this.id)
-      this.account=data
+      this.account = data
     })
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
 
+  searchByname(value: string) {
+    let check = "#";
+    if (value[0]==check) {
+     let value1 = value.replace("#", "")
+      this.adminService.searchByPhone(value1).subscribe((data) => {
+        console.log(this.id)
+        this.account = data
+      })
+    } else {
+      this.adminService.searchByname(value).subscribe((data) => {
+        console.log(this.id)
+        this.account = data
+      })
+    }
   }
 
 }
