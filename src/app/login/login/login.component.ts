@@ -33,7 +33,7 @@ loginForm = new FormGroup({
       this.shopService.setIdShop(data.id);
       this.shopService.setImgShop(data.img);
       this.shopService.setNameShop(data.name);
-      this.shopService.setAddressShop(data.address)
+      this.shopService.setAddressShop(data.shopAddress)
       console.log(this.shop)
     })
       alert("đăng nhập thành công")
