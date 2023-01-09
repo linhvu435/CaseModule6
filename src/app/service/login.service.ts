@@ -14,18 +14,7 @@ register(account: any): Observable<any> {
   return this.http.post<any>("http://localhost:8080/login/register", account);
 }
 
-  // setToken(token: string){
-  //   localStorage.setItem("token",token);
-  // }
-  //
-  // getToken(){
-  //   return localStorage.getItem("token");
-  // }
-  // setUserToken(userToken: UserToken){
-  //   localStorage.setItem("userToken",JSON.stringify(userToken));
-  // }
-  //
-  // getUserToken(): UserToken{
-  //   return JSON.parse(<string>localStorage.getItem("userToken"));
+  // checkUsername(account: any): Observable<any> {
+  //   return this.http.get<any>("http://localhost:8080/login/checkUsername",account);
   // }
 }
