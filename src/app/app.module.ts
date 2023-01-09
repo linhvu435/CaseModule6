@@ -30,7 +30,7 @@ import {AuthInterceptor} from "./auth/auth.interceptor";
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    BillComponent,
+
 
   ],
   imports: [
