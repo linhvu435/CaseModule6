@@ -34,61 +34,43 @@
               <h3 class="new-product-title pull-left">Đơn hàng của shop</h3>
             </div>
           </div>
-          <div *ngFor="let b of bill">
-          <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
+
+          <div *ngFor="let b of bills"  >
+          <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp" >
             <div class="more-info-tab clearfix ">
-              <h3 class="new-product-title pull-left">Người mua : {{b.account.name}}     Ngày mua:{{b.date}}</h3>
+              <h3 class="new-product-title pull-left">Người mua : {{b.account.name}}    </h3>
             </div>
-            <div class="tab-content outer-top-xs">
+            <div class="tab-content outer-top-xs" >
               <div class="tab-pane in active" id="all">
                 <div class="product-slider">
-                  <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
-                    <div *ngFor="let c of b.product">
-                      <div class="item item-carousel">
-                      <div class="products">
-                        <div class="product">
-                          <div class="product-image">
-                            <!-- /.image -->
-                            <div class="image"><a href="detail.html"><img src="" alt=""></a></div>
-                             <div class="tag new"><span>new</span></div>
-                          </div>
-                          <!-- /.product-image -->
-                          <div class="product-info text-left">{{c.detail}}
-                            <h3 class="name"><a href="detail.html">{{c.name}}</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="description"></div>
-                            <div class="product-price"> <span class="price">{{c.price}}</span></div>
-                            <!-- /.product-price -->
-
-                          </div>
-                          <!-- /.product-info -->
-                          <!-- /.cart -->
-                        </div>
-                        <!-- /.product -->
-
-                      </div>
-                      <!-- /.products -->
-                    </div>
-                    </div>
-
-                  </div>
                   <!-- /.home-owl-carousel -->
                 </div>
                 <!-- /.product-slider -->
               </div>
               <!-- /.tab-pane -->
-              <div style="margin-bottom: 10px">
+              <div style="margin-bottom: 10px" >
+                <h4>Ngày mua:  {{b.date}}</h4>
+                <div id="thongtin{{b.id}}"></div>
+                <div id="{{b.id}}">
+
+                </div>
                 <h4>Trạng thái : {{b.billStatus.name}}</h4>
                 <h4>Tổng tiền : {{b.totalprice}}</h4>
               </div>
 
-              <div class="d-grid gap-2" *ngIf="b.billStatus.id==1">
-                <button class="btn btn-primary" type="button" style="width: 98%">Xác nhận đơn hàng</button>
+              <div class="d-grid gap-2" (click)="showbillbyidbill(b.id)">
+                <button class="btn btn-primary" type="button" style="width: 98%" >Xem chi tiết đơn hàng</button>
                 <h3>  </h3>
+                <div *ngIf="b.billStatus.id==1">
+                <button class="btn btn-success" type="button" style="width: 98%" (click)="this.setbillshop(2,b.id)">Xác nhận đơn hàng</button>
+                <h3></h3>
+                  <button class="btn btn-warning" type="button" style="width: 98%" (click)="this.setbillshop(5,b.id)">Hủy đơn hàng</button>
+                  <h3></h3>
+                </div>
+                <div *ngIf="b.billStatus.id==2">
+                  <button class="btn btn-warning" type="button" style="width: 98%" (click)="this.setbillshop(3,b.id)">Đánh dấu đã giao thành công</button>
+                  <h3></h3>
               </div>
-              <div class="d-grid gap-2" *ngIf="b.billStatus.id==2">
-                <button class="btn btn-primary" type="button" style="width: 98%" >Hủy đơn hàng</button>
-                <h3>  </h3>
               </div>
 
 

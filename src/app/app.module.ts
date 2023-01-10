@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ProductModule} from "./product/product.module";
+
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
@@ -16,6 +17,15 @@ import {HomeModule} from "./home/home.module";
 import { BillComponent } from './bill/bill.component';
 import {BillModule} from "./bill/bill.module";
 import {AuthInterceptor} from "./auth/auth.interceptor";
+import { BilluserComponent } from './billuser/billuser.component';
+import {BilluserModule} from "./billuser/billuser.module";
+import {NavbarleftComponent1} from "./home/navbarleft/navbarleft-component1.component";
+
+
+
+
+
+
 import { CartComponent } from './cart/cart/cart.component';
 
 
@@ -24,6 +34,7 @@ import { CartComponent } from './cart/cart/cart.component';
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    BilluserComponent,// ShowAdminComponent,
     CartComponent,
 
   ],
@@ -37,7 +48,9 @@ import { CartComponent } from './cart/cart/cart.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
     HomeModule,
-    BillModule
+    BillModule,
+    BilluserModule
+
   ],
   providers: [
     {

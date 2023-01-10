@@ -26,6 +26,10 @@ const routes: Routes = [
     loadChildren: () => import('./bill/bill.module').then(module => module.BillModule)
   },
   {
+    path: 'billuser',
+    loadChildren: () => import('./billuser/billuser.module').then(module => module.BilluserModule)
+  },
+  {
     path: 'cart', component: CartComponent
   }
 
