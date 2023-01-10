@@ -242,7 +242,12 @@
         <td>
           <a [routerLink]="'showOne/'+p.id" class="delete"><i class="material-icons">View</i></a>
         </td>
+        <td>
 
+           <button *ngIf="p.status==1" (click)="updateStatus(p.id,2)" >🔓</button>
+           <button *ngIf="p.status==2" (click)="updateStatus(p.id,1)" >🔒</button>
+
+        </td>
       </tr>
       <pagination-controls (pageChange)="S = ($event)"></pagination-controls>
       </tbody>

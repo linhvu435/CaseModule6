@@ -56,13 +56,10 @@
       <label>img</label>
       <input class="form-control" placeholder="Enter img" formControlName="img">
     </div>
-    <div class="form-group">
-      <label>status</label>
-      <input class="form-control" placeholder="Enter status" formControlName="status">
-    </div>
+
     <div class="form-group">
       <label>roles</label>
-      <select>
+      <select formControlName="roles">
         <option *ngFor="let p of role" [value]="p.id" [ngValue]="p">{{p.name}}</option>
       </select>
     </div>

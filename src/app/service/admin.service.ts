@@ -32,7 +32,12 @@ export class AdminService {
   searchByname(name:string): Observable<Account[]>{
     return this.http.get<Account[]>(`${API_URL}/admin/seach/${name}`);
   }
+
   searchByPhone(phone:string): Observable<Account[]>{
     return this.http.get<Account[]>(`${API_URL}/admin/User/seach/${phone}`);
+  }
+
+  updateStatus(id: number, idstt : number): Observable<Account>{
+    return this.http.get<Account>(`${API_URL}/admin/User/update/${id}/${idstt}`);
   }
 }

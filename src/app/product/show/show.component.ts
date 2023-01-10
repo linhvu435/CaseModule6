@@ -14,19 +14,6 @@ export class ShowComponent implements OnInit,OnChanges {
   constructor(private productService: ProductService, private shopService : ShopService) {
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-<<<<<<< HEAD
-    this.productService.getAll().subscribe((data)=>{
-      this.products = data
-=======
-    this.id = this.shopService.getIdShop()
-    this.productService.getProductByIdShop(this.id).subscribe((data)=>{
-    this.products = data
->>>>>>> c2d60439f0dac463ec75498140406ab75a98771c
-  })
-}
-
-
   ngOnInit(): void {
     this.id = this.shopService.getIdShop();
     this.productService.getProductByIdShop(this.id).subscribe((data)=>{
@@ -34,5 +21,16 @@ export class ShowComponent implements OnInit,OnChanges {
     })
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
 
-}
+    this.productService.getAll().subscribe((data)=>{this.products = data
+
+    this.id = this.shopService.getIdShop()
+    this.productService.getProductByIdShop(this.id).subscribe((data)=>{
+    this.products = data
+
+  })
+})
+
+
+}}
