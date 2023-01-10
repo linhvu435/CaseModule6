@@ -16,11 +16,15 @@
   <br>
   <br>
   <h2>Create <b>Product</b></h2>
-<!--  <input type="file"  #uploadFile class="form-control" multiple="multiple">-->
+
+<!--  <div>-->
+<!--    <input type="file"  #uploadFile class="form-control" multiple="multiple">-->
+<!--  </div>-->
 <!--  <button (click)="uploadFileImg()">Upload</button>-->
 <!--  <div *ngFor="let img of arrayPicture">-->
 <!--    <img [src]="img" height="300" width="300">-->
 <!--  </div>-->
+
   <form style="width: 500px" [formGroup]="createForm" (ngSubmit)="create()">
     <div class="form-group">
       <label>Name</label>
@@ -42,6 +46,13 @@
     <div class="form-group">
       <label>Amount</label>
       <input class="form-control" placeholder="Enter Amount" formControlName="amount">
+    </div>
+
+    <div formGroupName="category">
+      <label>Brand</label>
+      <select formControlName="id">
+        <option *ngFor="let c of categorys" [value]="c.id" >{{c.name}}</option>
+      </select>
     </div>
 
     <button type="submit" class="btn btn-primary" style="margin-right: 10px">Create</button>

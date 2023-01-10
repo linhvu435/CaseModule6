@@ -3,10 +3,12 @@ import {SearchService} from "../../service/search.service";
 
 @Component({
   selector: 'app-navbarleft',
-  templateUrl: './navbarleft.component.html',
-  styleUrls: ['./navbarleft.component.css']
+  templateUrl: './navbarleft-component1.component.html',
+  styleUrls: ['./navbarleft-component1.component.css']
 })
-export class NavbarleftComponent implements OnInit{
+
+
+export class NavbarleftComponent1 implements OnInit{
 
   category : any;
 

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { BillRoutingModule } from './bill-routing.module';
 import { NavbarleftbillComponent } from './navbarleftbill/navbarleftbill.component';
-import {DanggiaoComponent} from "./danggiao/danggiao.component";
 import {BillComponent} from "./bill.component";
 import {FormsModule} from "@angular/forms";
 
@@ -13,7 +12,6 @@ import {FormsModule} from "@angular/forms";
 
     NavbarleftbillComponent,
 
-    DanggiaoComponent,
     BillComponent,
 
   ],

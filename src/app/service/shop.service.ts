@@ -13,6 +13,9 @@ export class ShopService {
   findById(id: number): Observable<Shop> {
     return this.http.get<Shop>(`${API_URL}/shop/${id}`);
   }
+  findShopById(id: number): Observable<Shop> {
+    return this.http.get<Shop>(`${API_URL}/shop/shop/${id}`);
+  }
   setIdShop(id : any){
     localStorage.setItem("idShop",id);
   }

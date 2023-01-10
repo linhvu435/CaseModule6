@@ -1,0 +1,55 @@
+
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Detail</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Amount</th>
+    <th>TotalPrice</th>
+    <th>Remove</th>
+  </tr>
+  <tr *ngFor="let c of carts, index as i " >
+    <td>{{c.id}}</td>
+    <td>{{c.name}}</td>
+    <td>{{c.detail}}</td>
+    <td>{{c.price}}</td>
+    <td>{{c.category.name}}</td>
+    <td><input (change)="updatePrice(i, $event)" type="number" [value]="c.amount" style="width: 60px"></td>
+    <td>{{subTotal(c)}}</td>
+    <td><button type="button" (click)="removeCart(i)">Delete</button></td>
+  </tr>
+  <p>Total Price : {{totalPrice}}</p>
+
+  <tr><button type="button">Buy</button></tr>
+</table>
+
+</body>
+
+
+
+

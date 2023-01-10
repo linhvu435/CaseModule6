@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { NavbarleftComponent } from './navbarleft/navbarleft.component';
+import { NavbarleftComponent1 } from './navbarleft/navbarleft-component1.component';
 import {SearchComponent} from "./search/search.component";
 
 
 @NgModule({
   declarations: [
-    NavbarleftComponent,
-    SearchComponent
+    NavbarleftComponent1,
+    SearchComponent,
+
   ],
   exports: [
-    NavbarleftComponent
+    NavbarleftComponent1
   ],
   imports: [
     CommonModule,

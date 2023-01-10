@@ -15,7 +15,26 @@
         <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
           <div class="more-info-tab clearfix ">
             <h3 class="new-product-title pull-left">Top sản phẩm bán chạy</h3>
-            <!-- /.nav-tabs -->
+
+            <!--        showProduct-->
+            <table class="table table-striped table-hover">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let p of products, index as i">
+                <td hidden>{{p.id }}</td>
+                <td><a [routerLink]="'view/customer/'+p.id"> {{p.name}}</a></td>
+                <td>
+                  <button (click)="pushInCart(p)">AddToCart</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <!--        showProduct-->
           </div>
           <div class="tab-content outer-top-xs">
             <div class="tab-pane in active" id="all">
@@ -923,26 +942,11 @@
         <!-- /.section -->
         <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
         <!-- ============================================== BEST SELLER ============================================== -->
-<!--        showProduct-->
-        <table class="table table-striped table-hover">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let p of products, index as i">
-            <td hidden>{{p.id }}</td>
-            <td><a [routerLink]="'view/customer/'+p.id"> {{p.name}}</a></td>
-            <td>
-              <button type="submit">AddToCart</button>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-<!--        showProduct-->
+
         <div class="best-deal wow fadeInUp outer-bottom-xs">
+
+          <h3 class="section-title">Best seller</h3>
+
           <h3 class="section-title">Dành cho bạn</h3>
           <div class="sidebar-widget-body outer-top-xs">
             <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">

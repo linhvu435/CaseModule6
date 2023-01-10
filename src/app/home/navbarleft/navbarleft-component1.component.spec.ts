@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DanggiaoComponent } from './danggiao.component';
+import { NavbarleftComponent1 } from './navbarleft-component1.component';
 
-describe('DanggiaoComponent', () => {
-  let component: DanggiaoComponent;
-  let fixture: ComponentFixture<DanggiaoComponent>;
+describe('NavbarleftComponent', () => {
+  let component: NavbarleftComponent1;
+  let fixture: ComponentFixture<NavbarleftComponent1>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DanggiaoComponent ]
+      declarations: [ NavbarleftComponent1 ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DanggiaoComponent);
+    fixture = TestBed.createComponent(NavbarleftComponent1);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
