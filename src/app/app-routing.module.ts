@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'bill',
     loadChildren: () => import('./bill/bill.module').then(module => module.BillModule)
   },
+  {
+    path: 'billuser',
+    loadChildren: () => import('./billuser/billuser.module').then(module => module.BilluserModule)
+  }
 ];
 
 @NgModule({

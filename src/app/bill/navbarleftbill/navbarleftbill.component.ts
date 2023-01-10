@@ -25,7 +25,12 @@ export class NavbarleftbillComponent implements OnInit{
 
   showbillbystatus(id:number):void{
     this.showbillshop.showbillbystatus(id).subscribe((data) => {
-      this.bill.bill = data
+      this.bill.bills=data;
     })
+
+  }
+
+  showbillshop1():void{
+    this.bill.showbillshop1();
   }
 }
