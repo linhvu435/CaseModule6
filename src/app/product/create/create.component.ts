@@ -28,15 +28,15 @@ categorys! : Array<Category>
       )
     this.createForm = new FormGroup({
       name: new FormControl(""),
-      img: new FormControl(""),
       detail: new FormControl(""),
       price: new FormControl(""),
       amount: new FormControl(""),
-      category: new FormGroup({brand: new FormControl(this.id)}),
+      category: new FormGroup({id: new FormControl(this.id)}),
       shop:  new FormGroup({id : new FormControl(localStorage.getItem("idShop"))})
     })
   }
   create() {
+      console.log(this.createForm.value)
     this.productService.saveProduct(this.createForm.value).subscribe()
     this.createForm.reset()
     this.router.navigate(["/product"]);

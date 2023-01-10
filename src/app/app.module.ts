@@ -16,13 +16,6 @@ import {HomeModule} from "./home/home.module";
 import { BillComponent } from './bill/bill.component';
 import {BillModule} from "./bill/bill.module";
 import {AuthInterceptor} from "./auth/auth.interceptor";
-
-
-
-
-
-
-
 import { CartComponent } from './cart/cart/cart.component';
 
 

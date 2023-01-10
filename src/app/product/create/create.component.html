@@ -50,7 +50,7 @@
 
     <div formGroupName="category">
       <label>Brand</label>
-      <select [(ngModel)]="id">
+      <select formControlName="id">
         <option *ngFor="let c of categorys" [value]="c.id" >{{c.name}}</option>
       </select>
     </div>

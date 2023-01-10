@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit,OnChanges {
   carts = JSON.parse(localStorage.getItem("carts"));
 
   constructor(private productService: ProductService) {
+    if(this.carts == null){
+      this.carts = []
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -32,6 +35,8 @@ export class HomeComponent implements OnInit,OnChanges {
   }
 
   pushInCart(product: any) {
+    console.log(product)
+    console.log(this.carts)
     let idx = this.carts.findIndex((item : any)=>{
       return item.id == product.id
     })
