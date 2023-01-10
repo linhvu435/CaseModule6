@@ -16,6 +16,26 @@
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+  .search-box {
+    display: flex;
+    background: var(--body-color);
+    border-radius: 20px;
+    align-items: center;
+    padding: 0px 15px;
+  }
+
+  .search-box img {
+    width: 16px;
+
+  }
+
+  .search-box input {
+    width: 240px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+  }
 </style>
 </head>
 <!-- ============================================== HEADER : END ============================================== -->
@@ -48,7 +68,13 @@
         <div id="product-tabs-slider1" class="scroll-tabs outer-top-vs wow fadeInUp">
           <div class="more-info-tab clearfix ">
             <h3 class="new-product-title pull-left">Đơn hàng của tôi</h3>
+            <div class="search-box" style="margin-left: 500px">
+
+              <input type="text" placeholder="Tìm kiếm theo người bán" #name id="textsearch">
+              <a ><img src="/assets/images/search.png" alt="" ></a>
+            </div>
           </div>
+
         </div>
 
         <div *ngFor="let b of billsuser"  >
