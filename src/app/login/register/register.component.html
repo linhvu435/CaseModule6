@@ -21,53 +21,68 @@
         <!-- create a new account -->
         <div class="col-md-6 col-sm-6 create-new-account">
           <h4 class="checkout-subtitle">Create a new account</h4>
-          <form class="register-form outer-top-xs" role="form" [formGroup]="registerForm" (ngSubmit)="register()" >
+          <form class="register-form outer-top-xs" role="form" [formGroup]="registerForm" (submit)="register()">
             <div class="form-group">
               <label class="info-title" for="exampleInputEmail2">Email Address <span>*</span></label>
-              <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail2" formControlName="email" placeholder="phải có đuôi @">
+              <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail2"
+                     formControlName="email" placeholder="phải có đuôi @">
               <p *ngIf="!registerForm.controls.email?.valid && (registerForm.controls.email?.touched
                    ||registerForm.controls.email?.touched)" style="color: red">
-              Bạn chưa đúng định dạng email!
+                Bạn chưa đúng định dạng email!
               </p>
             </div>
             <div class="form-group">
               <label class="info-title" for="exampleInputEmail1">UserName <span>*</span></label>
-              <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail1" formControlName="username">
-              <em *ngIf="registerForm.controls['username']?.errors" class="text-danger" >
+              <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail1"
+                     formControlName="username">
+              <em *ngIf="registerForm.controls['username']?.errors" class="text-danger">
                 Username vượt qua độ dài quy định chỉ 20 từ
               </em>
             </div>
             <div class="form-group">
               <label class="info-title" for="exampleInputEmail1">Phone Number <span>*</span></label>
-              <input type="number" class="form-control unicase-form-control text-input" id="exampleInputEmail12" formControlName="phoneNumber" >
-<!--              <p *ngIf="!registerForm.get('phoneNumber')?.valid" style="color: red">Không được để trống</p>-->
+              <input type="number" class="form-control unicase-form-control text-input" formControlName="phoneNumber">
+              <em *ngIf="registerForm.controls['phoneNumber']?.errors" class="text-danger">
+                số điện thoại không vượt qua 12 số
+              </em>
             </div>
             <div class="form-group">
               <label class="info-title" for="exampleInputEmail1">Password <span>*</span></label>
-              <input type="password" class="form-control unicase-form-control text-input" id="exampleInputEmail13" formControlName="password">
+              <input type="password" class="form-control unicase-form-control text-input" id="exampleInputEmail13"
+                     formControlName="password">
               <em *ngIf="registerForm.controls['password']?.errors?.['minlength']['actualLength']<
-              registerForm.controls['password']?.errors?.['minlength']['requiredLength']" class="text-danger">
+              registerForm.controls['password']?.errors?.['minlength']['requiredLength']"
+                  class="text-danger">
                 Mật khẩu phải từ 3 đến 20 kí tự
               </em>
             </div>
             <div class="form-group">
               <label class="info-title" for="exampleInputEmail1">Confirm Password <span>*</span></label>
-              <input type="password" class="form-control unicase-form-control text-input" id="exampleInputEmail14" formControlName="confirmPassword">
-              <em *ngIf="registerForm.controls['confirmPassword']?.errors?.['minlength']['actualLength']<
+              <input type="password" class="form-control unicase-form-control text-input"
+                     formControlName="confirmPassword" >
+
+              <p *ngIf="registerForm.controls['confirmPassword']?.errors?.['minlength']['actualLength']<
               registerForm.controls['confirmPassword']?.errors?.['minlength']['requiredLength']" class="text-danger">
                 Mật khẩu phải từ 3 đến 20 kí tự
-              </em>
+              </p>
+              <p
+                *ngIf="!registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)"></p>
+              <p style="color: red" *ngIf="registerForm.get('confirmPassword')?.errors?.['maxlength']">
+                Xác nhận mật khẩu tối đa 20 kí tự
+              </p>
             </div>
-            <div class="form-group">
-              <label class="info-title" for="exampleInputEmail1">IMG <span>*</span></label>
-              <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail15" formControlName="img">
-            </div>
-            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
+
+                        <div class="form-group">
+                          <label class="info-title" for="exampleInputEmail1">Địa chỉ <span>*</span></label>
+                          <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail15" formControlName="adress">
+                        </div>
+            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up
+            </button>
           </form>
 
 
         </div>
-        <!-- create a new account -->			</div><!-- /.row -->
+        <!-- create a new account -->      </div><!-- /.row -->
     </div><!-- /.sigin-in-->
     <!-- ============================================== BRANDS CAROUSEL ============================================== -->
     <div id="brands-carousel" class="logo-slider wow fadeInUp">
@@ -137,7 +152,8 @@
       </div><!-- /.logo-slider-inner -->
 
     </div><!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
+    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+  </div><!-- /.container -->
 </div><!-- /.body-content -->
 <!-- ============================================================= FOOTER ============================================================= -->
 <footer id="footer" class="footer color-bg">
@@ -298,18 +314,29 @@
 <script src="switchstylesheet/switchstylesheet.js"></script>
 
 <script>
-  $(document).ready(function(){
-    $(".changecolor").switchstylesheet( { seperator:"color"} );
-    $('.show-theme-options').click(function(){
+  $(document).ready(function () {
+    $(".changecolor").switchstylesheet({seperator: "color"});
+    $('.show-theme-options').click(function () {
       $(this).parent().toggleClass('open');
       return false;
     });
   });
 
-  $(window).bind("load", function() {
+  $(window).bind("load", function () {
     $('.show-theme-options').delay(2000).trigger('click');
   });
+
+
+  //   let result = confirm("Bạn có muốn đang kí không ?");
+  //   if (result == true) {
+  //   alert("Bạn đồng ý xóa");
+  // } else {
+  //   alert("Bạn không xóa");
+  // }
+
 </script>
 <!-- For demo purposes – can be removed on production : End -->
 
 </body>
+
+
